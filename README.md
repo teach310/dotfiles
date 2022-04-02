@@ -1,14 +1,23 @@
-dotfile
+# teach's dotfiles
 
-## ファイルの追加方法
+
+## Reqiremnt
+
+- peco
+- Ruby (3.1.1で確認)
+
+
+## Install
 
 ```
-$ cd path/to/dotfiles
-$ ln -s ~/.zshrc .zshrc
+ruby scripts/install.rb
 ```
 
-シンボリックリンク
+You can confirm what files will link by
 
 ```
-ln -s 「シンボリックリンク元のパス」 「シンボリックリンクを作成する場所のパス」
+ruby scripts/install.rb --dry-run
 ```
+
+## 育て方
+https://qiita.com/reireias/items/b33b5c824a56dc89e1f7
