@@ -1,0 +1,1 @@
+/Users/Teach/.zshrc
