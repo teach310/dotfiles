@@ -13,8 +13,11 @@ setopt PROMPT_SUBST
 PROMPT='%F{yellow}%c%f%F{green}$(__git_ps1 "(%s)")%f$ '
 
 # Path
-export GOPATH=$(go env GOPATH)
-export PATH=$PATH:$GOPATH/bin
+if type go > /dev/null 2>&1; then
+  export GOPATH=$(go env GOPATH)
+  export PATH=$PATH:$GOPATH/bin
+fi
+
 export PATH=~/.npm-global/bin:$PATH
 export PATH=~/google-cloud-sdk/bin:$PATH
 export PATH="/usr/local/sbin:$PATH"
