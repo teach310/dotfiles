@@ -1,5 +1,5 @@
 # teach's dotfiles
-Mac用設定ファイル、ツール群。
+Mac用設定ファイル、ツール群。　　
 リポジトリ名はdotfilesだがdotfileじゃないものも入る。
 
 ## Reqiremnt
@@ -21,11 +21,11 @@ ruby scripts/install.rb --dry-run
 
 ## Contents
 
-zsh
+zsh　　
 vscode 
 
 ## Directory
-home -> $HOME
+home -> $HOME　　
 other -> locations.tsv
 
 ## Unlink
