@@ -24,6 +24,10 @@ ruby scripts/install.rb --dry-run
 zsh
 vscode 
 
+## Directory
+home -> $HOME
+other -> locations.tsv
+
 ## Unlink
 
 manual.
