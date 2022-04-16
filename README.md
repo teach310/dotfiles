@@ -24,5 +24,17 @@ ruby scripts/install.rb --dry-run
 zsh
 vscode 
 
+## Unlink
+
+manual.
+
+```
+# confirm link
+$ ls -l ~/.zshrc
+
+# unlink
+$ unlink ~/.zshrc
+```
+
 ## 育て方
 https://qiita.com/reireias/items/b33b5c824a56dc89e1f7
