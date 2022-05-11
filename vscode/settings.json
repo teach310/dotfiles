@@ -59,5 +59,6 @@
   "git.confirmSync": false,
   "git.autofetch": true,
   "gitlens.hovers.currentLine.over": "line",
-  "terminal.integrated.scrollback": 20000
+  "terminal.integrated.scrollback": 20000,
+  "omnisharp.useGlobalMono": "always"
 }
