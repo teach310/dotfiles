@@ -64,3 +64,7 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 zstyle ':completion:*'  list-colors '=*=35'
 # 選択中の候補に背景色付け
 zstyle ':completion:*:default' menu select=2
+
+# direnv用の設定
+export EDITOR=code
+eval "$(direnv hook zsh)"
