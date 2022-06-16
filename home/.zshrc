@@ -58,7 +58,7 @@ fi
 # zsh-syntax-highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # zsh-autosuggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # 補完候補一覧をカラー表示 '=対象=色' 35はPink
 zstyle ':completion:*'  list-colors '=*=35'
