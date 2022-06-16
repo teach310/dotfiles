@@ -22,13 +22,11 @@ end
 def home_paths
   pwd = Dir.pwd
   home_dir = Dir.home
-  Dir.glob('home/**/*', File::FNM_DOTMATCH).filter_map do |path|
-    if File.file?(path)
-      {
-        src: "#{pwd}/#{path}",
-        dest: "#{home_dir}#{path.delete_prefix('home')}"
-      }
-    end
+  Dir.glob('home/**/*', File::FNM_DOTMATCH).select { |path| File.file?(path) }.map do |path|
+    {
+      src: "#{pwd}/#{path}",
+      dest: "#{home_dir}#{path.delete_prefix('home')}"
+    }
   end
 end
 
@@ -40,13 +38,11 @@ end
 def location_paths(row)
   pwd = Dir.pwd
   home_dir = Dir.home
-  Dir.glob("#{row[0]}/**/*", File::FNM_DOTMATCH).filter_map do |path|
-    if File.file?(path)
-      {
-        src: "#{pwd}/#{path}",
-        dest: "#{home_dir}/#{path.sub(row[0], row[1])}"
-      }
-    end
+  Dir.glob("#{row[0]}/**/*", File::FNM_DOTMATCH).select { |path| File.file?(path) }.map do |path|
+    {
+      src: "#{pwd}/#{path}",
+      dest: "#{home_dir}/#{path.sub(row[0], row[1])}"
+    }
   end
 end
 
