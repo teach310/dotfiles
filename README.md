@@ -23,10 +23,15 @@ ruby scripts/install.rb --dry-run
 
 - zsh
 - vscode
+ - settings
+ - extentions
 
 ## Directory
 - home -> $HOME
 - other -> locations.tsv
+
+## oneshot
+files that don't link.
 
 ## Unlink
 
