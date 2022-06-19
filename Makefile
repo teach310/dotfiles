@@ -7,6 +7,16 @@ help:
 	| sed -n 's/^#: \(.*\)###\(.*\):.*/\2###\1/p' \
 	| column -t  -s '###'
 
+.PHONY: install
+#: シンボリックリンク作る
+install:
+	ruby scripts/install.rb
+
+.PHONY: dry-install
+#: シンボリックリンク作る(dry-run)
+dry-install:
+	ruby scripts/install.rb --dry-run
+
 .PHONY: build-oneshot
 #: build-oneshot
 build-oneshot:
