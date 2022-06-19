@@ -1,0 +1,22 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+brew "direnv"
+brew "git"
+brew "jq"
+brew "mas"
+brew "mono"
+brew "mysql"
+brew "peco"
+brew "ruby-build"
+brew "rbenv"
+brew "tree"
+brew "zsh-autosuggestions"
+brew "zsh-completions"
+brew "zsh-syntax-highlighting"
+cask "dotnet-sdk"
+cask "google-japanese-ime"
+cask "scroll-reverser"
+mas "LINE", id: 539883307
+mas "Sequel Ace", id: 1518036000
+mas "Slack", id: 803453959
