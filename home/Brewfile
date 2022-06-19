@@ -14,9 +14,16 @@ brew "tree"
 brew "zsh-autosuggestions"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
+cask "alfred"
 cask "dotnet-sdk"
+cask "dropbox"
+cask "google-chrome"
 cask "google-japanese-ime"
+cask "iterm2"
+cask "postman"
 cask "scroll-reverser"
+cask "skitch"
+cask "unity-hub"
 mas "LINE", id: 539883307
 mas "Sequel Ace", id: 1518036000
 mas "Slack", id: 803453959
