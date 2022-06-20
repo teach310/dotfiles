@@ -23,6 +23,7 @@ cask "iterm2"
 cask "postman"
 cask "scroll-reverser"
 cask "skitch"
+cask "sourcetree"
 cask "unity-hub"
 mas "LINE", id: 539883307
 mas "Sequel Ace", id: 1518036000
