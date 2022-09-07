@@ -47,6 +47,14 @@ function makefile-select-and-run() {
 }
 alias m=makefile-select-and-run
 
+if type gh > /dev/null 2>&1; then
+  function gh-pr-list-peco() {
+    PR_URL=$(gh pr list --json number,title,url | jq -r '.[] | [.number, .title, .url] | @tsv' | peco | awk '{print $3}')
+    open $PR_URL
+  }
+  alias prlw=gh-pr-list-peco
+fi
+
 # zsh-completions
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH

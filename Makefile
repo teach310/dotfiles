@@ -26,3 +26,8 @@ build-oneshot:
 #: vscodeの拡張機能をインストール
 install-vscode-ext:
 	for f in `cat oneshot/vscode_list_extensions.txt`; do code --install-extension $$f; done
+
+.PHONY: install-oneshot
+#: ghのaliasをインストール
+install-oneshot:
+	gh alias set prc "pr create -w"
