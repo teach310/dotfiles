@@ -5,7 +5,8 @@ eamodio.gitlens
 EditorConfig.EditorConfig
 gera2ld.markmap-vscode
 golang.go
-jpoissonnier.vscode-styled-components
+hashicorp.terraform
+k--kato.docomment
 kaiwood.endwise
 kleber-swf.unity-code-snippets
 mechatroner.rainbow-csv
