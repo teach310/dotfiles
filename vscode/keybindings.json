@@ -111,5 +111,25 @@
     {
         "key": "cmd+numpad_add",
         "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+alt+left",
+        "command": "-cursorWordPartLeft",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+left",
+        "command": "-cursorWordPartLeftSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+alt+right",
+        "command": "-cursorWordPartRight",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+right",
+        "command": "-cursorWordPartRightSelect",
+        "when": "textInputFocus"
     }
 ]
