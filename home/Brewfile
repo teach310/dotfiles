@@ -3,16 +3,20 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "planetscale/tap"
+brew "sqlite"
 brew "awscli"
 brew "direnv"
+brew "ffmpeg"
 brew "gh"
 brew "git"
 brew "go"
 brew "jq"
+brew "libfido2"
 brew "mas"
 brew "mysql"
 brew "mysql-client"
 brew "peco"
+brew "python@3.10"
 brew "ruby-build"
 brew "rbenv"
 brew "tfenv"
@@ -35,3 +39,10 @@ cask "sequel-ace"
 cask "skitch"
 cask "sourcetree"
 cask "unity-hub"
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "LINE", id: 539883307
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Slack", id: 803453959
