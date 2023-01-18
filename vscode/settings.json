@@ -63,5 +63,6 @@
   "omnisharp.useModernNet": false,
   "[json]": {
     "editor.tabSize": 2
-  }
+  },
+  "diffEditor.renderSideBySide": false
 }
