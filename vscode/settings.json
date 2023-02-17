@@ -64,5 +64,6 @@
   "[json]": {
     "editor.tabSize": 2
   },
-  "diffEditor.renderSideBySide": false
+  "diffEditor.renderSideBySide": false,
+  "editor.inlineSuggest.enabled": true
 }
