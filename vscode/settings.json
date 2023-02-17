@@ -65,5 +65,6 @@
     "editor.tabSize": 2
   },
   "diffEditor.renderSideBySide": false,
-  "editor.inlineSuggest.enabled": true
+  "editor.inlineSuggest.enabled": true,
+  "redhat.telemetry.enabled": false
 }
