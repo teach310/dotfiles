@@ -66,5 +66,11 @@
   },
   "diffEditor.renderSideBySide": false,
   "editor.inlineSuggest.enabled": true,
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": false
+  }
 }
