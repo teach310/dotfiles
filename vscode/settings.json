@@ -72,5 +72,8 @@
     "yaml": true,
     "plaintext": false,
     "markdown": false
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
   }
 }
