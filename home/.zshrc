@@ -71,6 +71,16 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
+#pecoでkill
+function peco-pkill() {
+  for pid in `ps aux | peco | awk '{ print $2 }'`
+  do
+    kill $pid
+    echo "Killed ${pid}"
+  done
+}
+alias pk="peco-pkill"
+
 # m で make helpを選択実行
 function makefile-select-and-run() {
   [ ! -e Makefile ] && echo "NotFound Makefile" && return
