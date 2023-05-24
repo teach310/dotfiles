@@ -70,8 +70,8 @@
   "github.copilot.enable": {
     "*": true,
     "yaml": true,
-    "plaintext": false,
-    "markdown": false
+    "plaintext": true,
+    "markdown": true
   },
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features"
