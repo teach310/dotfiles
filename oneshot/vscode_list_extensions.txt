@@ -1,9 +1,12 @@
+42Crunch.vscode-openapi
 adam-bender.commit-message-editor
 castwide.solargraph
 christian-kohler.path-intellisense
 eamodio.gitlens
 EditorConfig.EditorConfig
 gera2ld.markmap-vscode
+GitHub.copilot-labs
+github.vscode-github-actions
 golang.go
 hashicorp.terraform
 k--kato.docomment
@@ -15,10 +18,10 @@ MS-CEINTL.vscode-language-pack-ja
 ms-dotnettools.csharp
 ms-vsliveshare.vsliveshare
 rebornix.ruby
+redhat.vscode-yaml
 shd101wyy.markdown-preview-enhanced
 sibiraj-s.vscode-scss-formatter
 sporto.rails-go-to-spec
-Unity.unity-debug
 wingrunr21.vscode-ruby
 zrachod.mono-snippets
 zxh404.vscode-proto3
