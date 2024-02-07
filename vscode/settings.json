@@ -75,5 +75,7 @@
   },
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features"
-  }
+  },
+  "workbench.sideBar.location": "right",
+  "platformio-ide.useBuiltinPIOCore": false
 }
