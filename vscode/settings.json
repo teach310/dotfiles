@@ -27,15 +27,6 @@
   "[ruby]": {
     "editor.tabSize": 2,
   },
-  "ruby.useBundler": false,
-  "ruby.useLanguageServer": true,
-  "ruby.lint": {
-    "rubocop": {
-      "useBundler": false
-    }
-  },
-  "ruby.intellisense": "rubyLocate",
-  "ruby.format": "rubocop",
   "[yaml]": {
     "editor.tabSize": 2
   },
@@ -77,5 +68,8 @@
     "editor.defaultFormatter": "vscode.css-language-features"
   },
   "workbench.sideBar.location": "right",
-  "platformio-ide.useBuiltinPIOCore": false
+  "platformio-ide.useBuiltinPIOCore": false,
+  "dev.containers.defaultExtensions": [
+    "eamodio.gitlens"
+  ]
 }
