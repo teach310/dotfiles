@@ -12,6 +12,16 @@ setopt PROMPT_SUBST
 # %F{色指定}変えたい部分%f
 PROMPT='%F{yellow}%c%f%F{green}$(__git_ps1 "(%s)")%f$ '
 
+# Homebrew (Apple Silicon: /opt/homebrew, Intel: /usr/local)
+if ! type brew > /dev/null 2>&1; then
+  for brew_bin in /opt/homebrew/bin/brew /usr/local/bin/brew; do
+    [ -x "$brew_bin" ] && eval "$($brew_bin shellenv)" && break
+  done
+  unset brew_bin
+fi
+# brew --prefixは遅いので一度だけ呼ぶ
+type brew > /dev/null 2>&1 && BREW_PREFIX=$(brew --prefix)
+
 # Path
 if type go > /dev/null 2>&1; then
   export GOPATH=$(go env GOPATH)
@@ -20,8 +30,6 @@ fi
 
 export PATH=~/.npm-global/bin:$PATH
 export PATH=~/google-cloud-sdk/bin:$PATH
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/bin:$PATH"
 eval "$(rbenv init -)"
 
 # alias
@@ -98,17 +106,12 @@ if type gh > /dev/null 2>&1; then
 fi
 
 # zsh-completions
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+[ -n "$BREW_PREFIX" ] && FPATH=$BREW_PREFIX/share/zsh-completions:$FPATH
+autoload -Uz compinit
+compinit
 
-    autoload -Uz compinit
-    compinit
-fi
-
-# zsh-syntax-highlighting
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # zsh-autosuggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -n "$BREW_PREFIX" ] && source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # 補完候補一覧をカラー表示 '=対象=色' 35はPink
 zstyle ':completion:*'  list-colors '=*=35'
@@ -118,3 +121,7 @@ zstyle ':completion:*:default' menu select=2
 # direnv用の設定
 export EDITOR=code
 eval "$(direnv hook zsh)"
+
+# zsh-syntax-highlighting
+# 他のウィジェット定義より後に読み込む必要があるため最後に置く
+[ -n "$BREW_PREFIX" ] && source $BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
