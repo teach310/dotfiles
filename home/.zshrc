@@ -28,7 +28,6 @@ setopt PROMPT_SUBST
 PROMPT='%F{yellow}%c%f%F{green}$(__git_ps1 "(%s)")%f$ '
 
 # Path
-export PATH=~/.npm-global/bin:$PATH
 export PATH=~/google-cloud-sdk/bin:$PATH
 eval "$(rbenv init -)"
 
