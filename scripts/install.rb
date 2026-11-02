@@ -1,11 +1,14 @@
 require 'optparse'
 require 'csv'
+require 'fileutils'
 
 def run
   options = ARGV.getopts('', 'dry-run')
   locations = read_locations('locations.tsv')
   target_paths = find_all_target_path(locations)
   create_symbolic_links(target_paths, options['dry-run'])
+  # cdrコマンドの履歴保存先
+  FileUtils.mkdir_p("#{Dir.home}/.cache/shell") unless options['dry-run']
   puts 'complete!'
 end
 
@@ -57,6 +60,7 @@ def link(src_path, dest_path, dry_run)
   return "Using #{dest_path}" if File.exist?(dest_path)
   return "(dry-run) link from: #{src_path} to: #{dest_path}" if dry_run
 
+  FileUtils.mkdir_p(File.dirname(dest_path))
   succeed = system('ln', '-s', src_path, dest_path) # spaceをescapeさせるために分割
   succeed ? "Link #{dest_path}" : "Link Failed #{dest_path}"
 end
