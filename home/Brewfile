@@ -7,8 +7,6 @@ brew "git"
 brew "jq"
 brew "libfido2"
 brew "mas"
-brew "mysql", link: false
-brew "mysql-client"
 brew "node"
 brew "peco"
 brew "platformio"
