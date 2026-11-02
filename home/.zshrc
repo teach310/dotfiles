@@ -1,6 +1,21 @@
+# Homebrew (Apple Silicon: /opt/homebrew, Intel: /usr/local)
+if ! type brew > /dev/null 2>&1; then
+  for brew_bin in /opt/homebrew/bin/brew /usr/local/bin/brew; do
+    [ -x "$brew_bin" ] && eval "$($brew_bin shellenv)" && break
+  done
+  unset brew_bin
+fi
+# brew --prefixは遅いので一度だけ呼ぶ
+type brew > /dev/null 2>&1 && BREW_PREFIX=$(brew --prefix)
+
 # show git branch
-# https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
-source ~/.git-prompt.sh
+# brewのgitに同梱されているgit-prompt.shを使う
+if [ -n "$BREW_PREFIX" ] && [ -f "$BREW_PREFIX/etc/bash_completion.d/git-prompt.sh" ]; then
+  source "$BREW_PREFIX/etc/bash_completion.d/git-prompt.sh"
+else
+  # 見つからない場合もプロンプトがエラーにならないようにする
+  function __git_ps1() { }
+fi
 
 # PROMPTの中の変数を展開するためのオプション
 setopt PROMPT_SUBST
@@ -12,22 +27,7 @@ setopt PROMPT_SUBST
 # %F{色指定}変えたい部分%f
 PROMPT='%F{yellow}%c%f%F{green}$(__git_ps1 "(%s)")%f$ '
 
-# Homebrew (Apple Silicon: /opt/homebrew, Intel: /usr/local)
-if ! type brew > /dev/null 2>&1; then
-  for brew_bin in /opt/homebrew/bin/brew /usr/local/bin/brew; do
-    [ -x "$brew_bin" ] && eval "$($brew_bin shellenv)" && break
-  done
-  unset brew_bin
-fi
-# brew --prefixは遅いので一度だけ呼ぶ
-type brew > /dev/null 2>&1 && BREW_PREFIX=$(brew --prefix)
-
 # Path
-if type go > /dev/null 2>&1; then
-  export GOPATH=$(go env GOPATH)
-  export PATH=$PATH:$GOPATH/bin
-fi
-
 export PATH=~/.npm-global/bin:$PATH
 export PATH=~/google-cloud-sdk/bin:$PATH
 eval "$(rbenv init -)"
