@@ -4,6 +4,8 @@ require 'fileutils'
 
 def run
   options = ARGV.getopts('', 'dry-run')
+  # どこから実行してもリポジトリルート基準で動くようにする
+  Dir.chdir(File.expand_path('..', __dir__))
   locations = read_locations('locations.tsv')
   target_paths = find_all_target_path(locations)
   create_symbolic_links(target_paths, options['dry-run'])
@@ -57,7 +59,15 @@ def create_symbolic_links(target_paths, dry_run)
 end
 
 def link(src_path, dest_path, dry_run)
-  return "Using #{dest_path}" if File.exist?(dest_path)
+  # 壊れたリンクもFile.exist?ではfalseになるのでsymlink?で先に判定する
+  if File.symlink?(dest_path)
+    current = File.readlink(dest_path)
+    return "Using #{dest_path}" if current == src_path
+
+    return "Skip #{dest_path} (別の場所へのリンク: #{current})"
+  end
+  return "Skip #{dest_path} (ファイルが既に存在するためリンクしていない)" if File.exist?(dest_path)
+
   return "(dry-run) link from: #{src_path} to: #{dest_path}" if dry_run
 
   FileUtils.mkdir_p(File.dirname(dest_path))
