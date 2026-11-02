@@ -9,12 +9,6 @@ Mac用設定ファイル、ツール群
 
 ## Install
 
-cdrコマンド有効化のためのフォルダを用意 TODO: installにいれちゃう
-
-```
-mkdir -p $HOME/.cache/shell/
-```
-
 ```
 ruby scripts/install.rb
 ```

@@ -21,7 +21,7 @@ fi
 export PATH=~/.npm-global/bin:$PATH
 export PATH=~/google-cloud-sdk/bin:$PATH
 export PATH="/usr/local/sbin:$PATH"
-export PATH="~/.rbenv/shims:/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 eval "$(rbenv init -)"
 
 # alias
@@ -91,8 +91,8 @@ alias m=makefile-select-and-run
 
 if type gh > /dev/null 2>&1; then
   function gh-pr-list-peco() {
-    PR_URL=$(gh pr list --json number,title,url | jq -r '.[] | [.number, .title, .url] | @tsv' | peco | awk '{print $3}')
-    open $PR_URL
+    PR_URL=$(gh pr list --json number,title,url | jq -r '.[] | [.number, .title, .url] | @tsv' | peco | awk -F'\t' '{print $3}')
+    [ -n "$PR_URL" ] && open "$PR_URL"
   }
   alias prlw=gh-pr-list-peco
 fi
