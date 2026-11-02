@@ -17,19 +17,6 @@ install:
 dry-install:
 	ruby scripts/install.rb --dry-run
 
-.PHONY: build-oneshot
-#: build-oneshot
-build-oneshot:
-	code --list-extensions > oneshot/vscode_list_extensions.txt
-
-.PHONY: install-vscode-ext
-#: vscodeの拡張機能をインストール
-install-vscode-ext:
-	for f in `cat oneshot/vscode_list_extensions.txt`; do code --install-extension $$f; done
-
-install-vscode-insiders-ext:
-	for f in `cat oneshot/vscode_list_extensions.txt`; do code-insiders --install-extension $$f; done
-
 .PHONY: install-oneshot
 #: ghのaliasをインストール
 install-oneshot:

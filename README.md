@@ -24,14 +24,11 @@ ruby scripts/install.rb --dry-run
 - zsh
 - vscode
  - settings
- - extentions
+ - extensions (home/Brewfile で管理)
 
 ## Directory
 - home -> $HOME
 - other -> locations.tsv
-
-## oneshot
-files that don't link.
 
 ## Unlink
 
